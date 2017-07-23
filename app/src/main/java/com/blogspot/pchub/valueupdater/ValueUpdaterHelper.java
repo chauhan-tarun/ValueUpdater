@@ -13,6 +13,7 @@ package com.blogspot.pchub.valueupdater;
 
 public class ValueUpdaterHelper {
 
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 
     /**
      * Interface for {@link ValueUpdaterHelper} which will return the value updates
@@ -25,13 +26,19 @@ public class ValueUpdaterHelper {
         void onValueUpdate(int updatedValue);
     }
 
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+
     // Min, Max and Initial values
     private int min = 0, max = Integer.MAX_VALUE, value = min;
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 
     /**
      * Empty constructor
      */
     public ValueUpdaterHelper() {}
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 
     /**
      * ValueUpdaterHelper constructor to set min, max and value value
@@ -45,6 +52,8 @@ public class ValueUpdaterHelper {
         setMax(max);
         setValue(initialValue);
     }
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 
     /**
      * Sets minimum value
@@ -62,6 +71,8 @@ public class ValueUpdaterHelper {
         }
     }
 
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+
     /**
      * Sets maximum value
      *
@@ -78,18 +89,24 @@ public class ValueUpdaterHelper {
         }
     }
 
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+
     /**
-     * Sets Initial value
+     * Use this method to update value directly.
      *
-     * @param initialValue initial value
+     * @param value initial value
+     * @return Returns the correct updated value within the defined min and max values
      */
-    public void setValue(int initialValue) {
-        if (initialValue < min || initialValue > max)
+    public int setValue(int value) {
+        if (value < min || value > max)
             this.value = min;
         else
-            this.value = initialValue;
+            this.value = value;
+
+        return this.value;
     }
 
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 
     /**
      * This method will perform all calculations and checks to return you
@@ -116,4 +133,7 @@ public class ValueUpdaterHelper {
 
         return value;
     }
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+
 }
