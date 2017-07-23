@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.blogspot.pchub.valueupdater.MainActivity">
+    tools:context="com.blogspot.pchub.valueupdater.MainActivityJava">
 
     <Button
         android:id="@+id/b_plus"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_value"
@@ -19,6 +21,8 @@
         android:id="@+id/b_minus"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="-"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/et_value"
         app:layout_constraintStart_toStartOf="parent"
