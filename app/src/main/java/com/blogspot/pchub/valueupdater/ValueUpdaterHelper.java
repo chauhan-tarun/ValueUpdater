@@ -45,7 +45,7 @@ public class ValueUpdaterHelper {
     private ValueUpdaterInterface updaterInterface;
 
     // Speed counter to return updated values with increasing speed
-    private int updatingSpeed = 1000;
+    private int updatingSpeed = 350;
 
     // This counter will help our updateSpeed to get reduced quickly as the updated values are sent.
     // This will result in nice effect to user where he can see that the speed of his updates
@@ -210,7 +210,7 @@ public class ValueUpdaterHelper {
 
                         // This will result in increased speed in value updates
                         if (updatingSpeed > 10) {
-                            updatingSpeed = -counter;
+                            updatingSpeed -= counter;
                             counter++;
                         }
 
@@ -219,7 +219,7 @@ public class ValueUpdaterHelper {
 
                         // So the limit is reached. Reset all long pressed values and stop sending regular updates
                         counter = 10;
-                        updatingSpeed = 1000;
+                        updatingSpeed = 350;
 
                     }
 
@@ -230,7 +230,7 @@ public class ValueUpdaterHelper {
 
             // View is no longer pressed. Reset all long pressed values to default and stop sending regular updates
             counter = 10;
-            updatingSpeed = 1000;
+            updatingSpeed = 350;
 
         }
 
