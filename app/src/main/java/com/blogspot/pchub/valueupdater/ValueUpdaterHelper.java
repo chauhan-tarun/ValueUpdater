@@ -10,7 +10,7 @@ import android.view.View;
  * <p>
  * <p>
  * Basically with help of this class you can simply set a min value,
- * a max value and an value value and you can get the updated value by passing
+ * a max value and an initial value and you can get the updated value by passing
  * the event type that is occurred.
  * </p>
  */
